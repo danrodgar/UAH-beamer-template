@@ -12,7 +12,7 @@
 % http://statistics.msi.meduniwien.ac.at/
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[10pt]{beamer} % Change 10pt to make fonts of a different size
+\documentclass[10pt,compress]{beamer} % Change 10pt to make fonts of a different size
 \mode<presentation>
 
 \usetheme{UAH}
@@ -21,6 +21,7 @@
 \setbeamertemplate{caption}[numbered]
 \usepackage[spanish]{babel}
 \usepackage[utf8x]{inputenc}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% FONTS
@@ -35,8 +36,14 @@
 %% Presentation Info
 \title[Your Short Title]{Main Title}
 \author{Prof. Dr. John Doe}
-\institute{Universidad de Alcalá}
+\institute{Departamento de Automática}
 \date{Date}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Descomentar para habilitar barra de navegación superior
+\ponerNavegacion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -47,11 +54,11 @@
 
 
 %% Option A: Title and institute
-%\footlineA
+\footlineA
 %% Option B: Author and institute
 %\footlineB
 %% Option C: Title, Author and institute
-\footlineC
+%\footlineC
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -59,26 +66,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Use this block for a blue title slide with modified footline
 {\titlepageBlue
-\begin{frame}
-  \titlepage
-\end{frame}
+    \setbeamertemplate{headline}{}
+    \begin{frame}
+        \titlepage
+    \end{frame}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Use this block for a white title slide with modified footline
 {\titlepageWhite
-\begin{frame}
-  \titlepage
-\end{frame}
+    \setbeamertemplate{headline}{}
+    \begin{frame}
+        \titlepage
+    \end{frame}
 }
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comment/Uncomment these lines for an automatically generated outline.
-\begin{frame}{Outline}
-  \tableofcontents
-\end{frame}
-
+{
+    \setbeamertemplate{headline}{}
+    \begin{frame}{Outline}
+        \tableofcontents
+    \end{frame}
+}
 
 \addtocounter{framenumber}{-1} %To control the number in which numbering begins
 
@@ -106,21 +116,25 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Section 1}
-{\sectionheaderWhite %Enclose the frame with {} and add this command for white background in section header
+{
+\sectionheaderWhite %Enclose the frame with {} and add this command for white background in section header
 \begin{frame}{Section Header 1}{Version - white background}
 \end{frame}
+
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Section 2}
-{\sectionheaderSkin %Enclose the frame with {} and add this command for skin background in section header
+{
+\sectionheaderSkin %Enclose the frame with {} and add this command for skin background in section header
 \begin{frame}{Section Header 2}{Version - backgroundcolour skin}
 \end{frame}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Section 3}
-{\sectionheaderGreen %Enclose the frame with {} and add this command for green background in section header
+{
+\sectionheaderGreen %Enclose the frame with {} and add this command for green background in section header
 \begin{frame}{Section Header 3}{Version - backgroundcolour green}
 \end{frame}
 }
