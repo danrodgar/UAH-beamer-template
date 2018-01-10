@@ -1,10 +1,5 @@
-## Medical University of Vienna R Markdown template for reproducible slides
+## Plantilla no oficial Universidad de Alcalá
 
-This repository contains an R Markdown template for creating slides with the that conforms with the Medical University of Vienna styling guidelines.
+Este repositorio contiene una plantilla no oficial siguiendo las directrices sobre [imagen corporativa de la UAH](https://portal.uah.es/portal/page/portal/servicio_comunicacion/imagen_institucional/documentos/manual_basico_identidad_institucional.pdf).
 
-You can see an [example PDF](https://github.com/nicoballarini/MUW-R-Markdown-template/blob/master/Presentation.pdf) here.
-
-## Comments, suggestions and contributions
-
-Contributions to the template are encouraged! Please fork and edit the project, then send a pull request.
-Feel free to send me a message if you find any issue or have any suggestion to improve this repository.
+La plantilla está escrita tanto en LaTeX como en RMarkdown.  Puedes ver un [ejemplo aquí](https://github.com/dfbarrero/UAH-beamer-template/main.pdf).
