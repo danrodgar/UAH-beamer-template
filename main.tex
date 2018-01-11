@@ -20,15 +20,19 @@
 \setbeamertemplate{navigation symbols}{} 
 \setbeamertemplate{caption}[numbered]
 \usepackage[spanish]{babel}
-\usepackage[utf8x]{inputenc}
-
+%\usepackage[utf8x]{inputenc}
+\usepackage{fontspec}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% FONTS
 %\usefonttheme{serif}  % Uncomment for all serif fonts
 %% Comment the following two lines for sans serif fonts in titles
-\setbeamerfont{frametitle}{family=\fontfamily{cmr}}
-\setbeamerfont{title}{family=\fontfamily{cmr}}
+%\setbeamerfont{frametitle}{family=\fontfamily{cmr}}
+%\setbeamerfont{title}{family=\fontfamily{cmr}}
+\setsansfont[Path=fonts/,
+    BoldItalicFont=SERIBC__.TTF,
+    BoldFont      =SERIB___.TTF,
+    ItalicFont    =SERII___.TTF]{SERIRG__.TTF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -43,7 +47,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Descomentar para habilitar barra de navegación superior
-\ponerNavegacion
+%\ponerNavegacion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -91,6 +95,47 @@
 }
 
 \addtocounter{framenumber}{-1} %To control the number in which numbering begins
+
+\section{Test}
+\begin{frame}{Test}
+%    \LARGE{(SEROriginal: Type your content here.)}
+
+%   \setmainfont{Calibri}
+%   \LARGE{(Calibri: Type your content here.)}
+
+    \setsansfont[Path=fonts/]{SERIRG__.TTF}
+    (SERIRG: Type your content here.)
+
+    \setsansfont[Path=fonts/]{SERIB___.TTF}
+    (SERIB: Type your content here.)
+
+    \setsansfont[Path=fonts/]{SERIBC__.TTF}
+    (SERIBC: Type your content here.)
+
+    \setsansfont[Path=fonts/]{SERII___.TTF}
+    (SERII: Type your content here.)
+
+    \setsansfont[Path=fonts/]{SERILRG_.TTF}
+    (SERILRG: Type your content here.)
+
+    \setsansfont[Path=fonts/]{SERILB__.TTF}
+    (SERILB: Type your content here.)
+  
+    \setsansfont[Path=fonts/]{SERILI__.TTF}
+    (SERILI: Type your content here.)
+
+    \setsansfont[Path=fonts/]{SERILBI_.TTF}
+    (SERILBI: Type your content here.)
+
+    Blablabla \textbf{blablabla} \textit{blablabla} \texttt{blablabla}
+
+    \setsansfont[Path=fonts/,
+        BoldFont      =SERILB__.TTF,
+        ItalicFont    =SERILI__.TTF]{SERILRG_.TTF}
+
+    Blablabla \textbf{blablabla} \textit{blablabla} \texttt{blablabla}
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
