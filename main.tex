@@ -10,6 +10,9 @@
 % Nicolas Ballarini, CeMSIIS, Medical University of Vienna
 % nicoballarini@gmail.com
 % http://statistics.msi.meduniwien.ac.at/
+%
+% Customized for UAH by:
+% David F. Barrero, Departamento de Automática, UAH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[10pt,compress]{beamer} % Change 10pt to make fonts of a different size
@@ -20,19 +23,17 @@
 \setbeamertemplate{navigation symbols}{} 
 \setbeamertemplate{caption}[numbered]
 \usepackage[spanish]{babel}
-%\usepackage[utf8x]{inputenc}
 \usepackage{fontspec}
+\usepackage{tikz}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% FONTS
-%\usefonttheme{serif}  % Uncomment for all serif fonts
-%% Comment the following two lines for sans serif fonts in titles
-%\setbeamerfont{frametitle}{family=\fontfamily{cmr}}
-%\setbeamerfont{title}{family=\fontfamily{cmr}}
+%% UAH FONTS
 \setsansfont[Path=fonts/,
     BoldItalicFont=SERIBC__.TTF,
     BoldFont      =SERIB___.TTF,
-    ItalicFont    =SERII___.TTF]{SERIRG__.TTF}
+    ItalicFont    =SERII___.TTF,
+    SmallCapsFont =SERIIC__.TTF,
+    BoldItalicFont=SERIBI__.TTF]{SERIRG__.TTF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -96,47 +97,6 @@
 
 \addtocounter{framenumber}{-1} %To control the number in which numbering begins
 
-\section{Test}
-\begin{frame}{Test}
-%    \LARGE{(SEROriginal: Type your content here.)}
-
-%   \setmainfont{Calibri}
-%   \LARGE{(Calibri: Type your content here.)}
-
-    \setsansfont[Path=fonts/]{SERIRG__.TTF}
-    (SERIRG: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERIB___.TTF}
-    (SERIB: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERIBC__.TTF}
-    (SERIBC: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERII___.TTF}
-    (SERII: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERILRG_.TTF}
-    (SERILRG: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERILB__.TTF}
-    (SERILB: Type your content here.)
-  
-    \setsansfont[Path=fonts/]{SERILI__.TTF}
-    (SERILI: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERILBI_.TTF}
-    (SERILBI: Type your content here.)
-
-    Blablabla \textbf{blablabla} \textit{blablabla} \texttt{blablabla}
-
-    \setsansfont[Path=fonts/,
-        BoldFont      =SERILB__.TTF,
-        ItalicFont    =SERILI__.TTF]{SERILRG_.TTF}
-
-    Blablabla \textbf{blablabla} \textit{blablabla} \texttt{blablabla}
-
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \begin{frame}{Introduction}
@@ -155,9 +115,22 @@
 		\end{description}
 	\end{itemize}
   \end{itemize}
+  \item Regular \textbf{bold} \textit{italics} \texttt{courier} \textbf{\textit{bold italics}}. Description:
+    \begin{description}
+        \item[Word] This is a nice description
+        \item[Another word] This is another nice description
+    \end{description}
+   \item This is an \alert{alert}
 \end{itemize}
-
 \end{frame}
+
+\begin{frame}[fragile]{Introduction 2}
+    \begin{verbatim}
+    This is a verbatim text
+    \end{verbatim}
+\end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Section 1}
