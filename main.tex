@@ -18,24 +18,15 @@
 \documentclass[10pt,compress]{beamer} % Change 10pt to make fonts of a different size
 \mode<presentation>
 
+\usepackage[spanish]{babel}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{etoolbox}
+
 \usetheme{UAH}
 \usecolortheme{UAH}
 \setbeamertemplate{navigation symbols}{} 
 \setbeamertemplate{caption}[numbered]
-\usepackage[spanish]{babel}
-\usepackage{fontspec}
-\usepackage{tikz}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% UAH FONTS
-\setsansfont[Path=fonts/,
-    BoldItalicFont=SERIBC__.TTF,
-    BoldFont      =SERIB___.TTF,
-    ItalicFont    =SERII___.TTF,
-    SmallCapsFont =SERIIC__.TTF,
-    BoldItalicFont=SERIBI__.TTF]{SERIRG__.TTF}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Presentation Info
@@ -48,9 +39,22 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Descomentar para habilitar barra de navegación superior
-%\ponerNavegacion
+\ponerNavegacion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Configuración de logotipos en portada
+%% Opacidad de los logotipos
+\newcommand{\opacidad}{1}
+%% Descomentar para habilitar logotipo en pié de página de portada
+\renewcommand{\logoUno}{Images/isg.png}
+%% Descomentar para habilitar logotipo en pié de página de portada
+\renewcommand{\logoDos}{Images/CCLogo.png}
+%% Descomentar para habilitar logotipo en pié de página de portada
+\renewcommand{\logoTres}{Images/ALogo.png}
+%% Descomentar para habilitar logotipo en pié de página de portada
+\renewcommand{\logoCuatro}{Images/ELogo.png}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% FOOTLINE
@@ -72,6 +76,8 @@
 % Use this block for a blue title slide with modified footline
 {\titlepageBlue
     \setbeamertemplate{headline}{}
+	\setbeamercolor{frametitle}{bg=black}
+	\setbeamercolor{normal text}{bg=black}
     \begin{frame}
         \titlepage
     \end{frame}
@@ -115,22 +121,26 @@
 		\end{description}
 	\end{itemize}
   \end{itemize}
-  \item Regular \textbf{bold} \textit{italics} \texttt{courier} \textbf{\textit{bold italics}}. Description:
+  \item Regular \textbf{bold} \textit{italics} \texttt{courier} \textbf{\textit{bold italics}}. 
+  \item Description:
     \begin{description}
         \item[Word] This is a nice description
         \item[Another word] This is another nice description
     \end{description}
-   \item This is an \alert{alert}
-\end{itemize}
+	\item Enumeration:
+	\begin{enumerate}
+   		\item This is an \alert{alert}
+   		\item This is another \alert{alert}
+	\end{enumerate}
+  \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Introduction 2}
-    \begin{verbatim}
-    This is a verbatim text
-    \end{verbatim}
+{
+\eliminarNavegacion
+\begin{frame}{Hola}{Adiós}
+	Blablabla
 \end{frame}
-
-
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Section 1}
@@ -145,6 +155,7 @@
 \section{Section 2}
 {
 \sectionheaderSkin %Enclose the frame with {} and add this command for skin background in section header
+\eliminarNavegacion
 \begin{frame}{Section Header 2}{Version - backgroundcolour skin}
 \end{frame}
 }

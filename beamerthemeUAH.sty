@@ -2,6 +2,17 @@
 
 \makeatletter
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% UAH FONTS
+\setsansfont[Path=fonts/,
+    BoldItalicFont=SERIBC__.TTF,
+    BoldFont      =SERIB___.TTF,
+    ItalicFont    =SERII___.TTF,
+    SmallCapsFont =SERIIC__.TTF,
+    BoldItalicFont=SERIBI__.TTF]{SERIRG__.TTF}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Poner barras de navegación, o no
 %%
@@ -12,6 +23,21 @@
         \end{beamercolorbox}%
     }
 }%
+
+\newcommand{\eliminarNavegacion}{
+	\makeatletter
+	\setbeamertemplate{headline}[default]
+	\def\beamer@entrycode{\vspace*{-\headheight}}
+	\makeatother
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Poner logotipos en portada
+%%
+\newcommand{\logoUno}{}
+\newcommand{\logoDos}{}
+\newcommand{\logoTres}{}
+\newcommand{\logoCuatro}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Create Footline for body slides. To modify content,
@@ -101,8 +127,22 @@
     \begin{beamercolorbox}[wd=\paperwidth,ht=7ex,dp=2ex,left]{author in head/foot}%
       \hspace{0.5cm} \vspace{-0.11cm} \includegraphics[width=.12\paperwidth]{Images/01_logo-vA_pant293.pdf}
     %\vspace{0cm}\hspace{4cm} 
-    \hspace{0.2cm}%\includegraphics[width=0.1\paperwidth]{Images/isg.png}
-    \begin{tikzpicture}\node[opacity=0.6] {\includegraphics[width=0.08\paperwidth]{Images/isg.png}};\end{tikzpicture}
+    \ifdefempty{\logoUno}{}{
+		\hspace{0.2cm}%\includegraphics[width=0.1\paperwidth]{Images/isg.png}
+    	\begin{tikzpicture}\node[opacity=\opacidad] {\includegraphics[height=6.5ex]{\logoUno}};\end{tikzpicture}
+	}
+    \ifdefempty{\logoDos}{}{
+		\hspace{0.2cm}%\includegraphics[width=0.1\paperwidth]{Images/isg.png}
+    	\begin{tikzpicture}\node[opacity=\opacidad] {\includegraphics[height=6.5ex]{\logoDos}};\end{tikzpicture}
+	}
+    \ifdefempty{\logoTres}{}{
+		\hspace{0.2cm}%\includegraphics[width=0.1\paperwidth]{Images/isg.png}
+    	\begin{tikzpicture}\node[opacity=\opacidad] {\includegraphics[height=6.5ex]{\logoTres}};\end{tikzpicture}
+	}
+    \ifdefempty{\logoCuatro}{}{
+		\hspace{0.2cm}%\includegraphics[width=0.1\paperwidth]{Images/isg.png}
+    	\begin{tikzpicture}\node[opacity=\opacidad] {\includegraphics[height=6.5ex]{\logoCuatro}};\end{tikzpicture}
+	}
     \end{beamercolorbox}%
       }%
     \vspace{2cm}
@@ -129,8 +169,26 @@
   {\hbox{%
     \begin{beamercolorbox}[wd=\paperwidth,ht=7ex,dp=2ex,left]{title in head/foot}%
       \hspace{0.5cm} \vspace{-0.11cm} \includegraphics[width=.12\paperwidth]{Images/01_logo-vA_293-fondoTransp.png}
+    \ifdefempty{\logoUno}{}{
+		\hspace{0.2cm}%\includegraphics[width=0.1\paperwidth]{Images/isg.png}
+    	\begin{tikzpicture}\node[opacity=\opacidad] {\includegraphics[height=6.5ex]{\logoUno}};\end{tikzpicture}
+	}
+    \ifdefempty{\logoDos}{}{
+		\hspace{0.2cm}%\includegraphics[width=0.1\paperwidth]{Images/isg.png}
+    	\begin{tikzpicture}\node[opacity=\opacidad] {\includegraphics[height=6.5ex]{\logoDos}};\end{tikzpicture}
+	}
+    \ifdefempty{\logoTres}{}{
+		\hspace{0.2cm}%\includegraphics[width=0.1\paperwidth]{Images/isg.png}
+    	\begin{tikzpicture}\node[opacity=\opacidad] {\includegraphics[height=6.5ex]{\logoTres}};\end{tikzpicture}
+	}
+    \ifdefempty{\logoCuatro}{}{
+		\hspace{0.2cm}%\includegraphics[width=0.1\paperwidth]{Images/isg.png}
+    	\begin{tikzpicture}\node[opacity=\opacidad] {\includegraphics[height=6.5ex]{\logoCuatro}};\end{tikzpicture}
+	}
+
     \end{beamercolorbox}%
       }%
+    \vspace{2cm}
     \vskip0pt%
   }
 \setbeamertemplate{title page}
