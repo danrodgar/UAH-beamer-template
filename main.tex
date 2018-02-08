@@ -10,31 +10,23 @@
 % Nicolas Ballarini, CeMSIIS, Medical University of Vienna
 % nicoballarini@gmail.com
 % http://statistics.msi.meduniwien.ac.at/
+%
+% Customized for UAH by:
+% David F. Barrero, Departamento de Automática, UAH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[10pt,compress]{beamer} % Change 10pt to make fonts of a different size
 \mode<presentation>
 
+\usepackage[spanish]{babel}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{etoolbox}
+
 \usetheme{UAH}
 \usecolortheme{UAH}
 \setbeamertemplate{navigation symbols}{} 
 \setbeamertemplate{caption}[numbered]
-\usepackage[spanish]{babel}
-%\usepackage[utf8x]{inputenc}
-\usepackage{fontspec}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% FONTS
-%\usefonttheme{serif}  % Uncomment for all serif fonts
-%% Comment the following two lines for sans serif fonts in titles
-%\setbeamerfont{frametitle}{family=\fontfamily{cmr}}
-%\setbeamerfont{title}{family=\fontfamily{cmr}}
-\setsansfont[Path=fonts/,
-    BoldItalicFont=SERIBC__.TTF,
-    BoldFont      =SERIB___.TTF,
-    ItalicFont    =SERII___.TTF]{SERIRG__.TTF}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Presentation Info
@@ -47,9 +39,22 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Descomentar para habilitar barra de navegación superior
-%\ponerNavegacion
+\ponerNavegacion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Configuración de logotipos en portada
+%% Opacidad de los logotipos
+\newcommand{\opacidad}{1}
+%% Descomentar para habilitar logotipo en pié de página de portada
+\renewcommand{\logoUno}{Images/isg.png}
+%% Descomentar para habilitar logotipo en pié de página de portada
+\renewcommand{\logoDos}{Images/CCLogo.png}
+%% Descomentar para habilitar logotipo en pié de página de portada
+\renewcommand{\logoTres}{Images/ALogo.png}
+%% Descomentar para habilitar logotipo en pié de página de portada
+\renewcommand{\logoCuatro}{Images/ELogo.png}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% FOOTLINE
@@ -71,6 +76,8 @@
 % Use this block for a blue title slide with modified footline
 {\titlepageBlue
     \setbeamertemplate{headline}{}
+	\setbeamercolor{frametitle}{bg=black}
+	\setbeamercolor{normal text}{bg=black}
     \begin{frame}
         \titlepage
     \end{frame}
@@ -96,47 +103,6 @@
 
 \addtocounter{framenumber}{-1} %To control the number in which numbering begins
 
-\section{Test}
-\begin{frame}{Test}
-%    \LARGE{(SEROriginal: Type your content here.)}
-
-%   \setmainfont{Calibri}
-%   \LARGE{(Calibri: Type your content here.)}
-
-    \setsansfont[Path=fonts/]{SERIRG__.TTF}
-    (SERIRG: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERIB___.TTF}
-    (SERIB: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERIBC__.TTF}
-    (SERIBC: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERII___.TTF}
-    (SERII: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERILRG_.TTF}
-    (SERILRG: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERILB__.TTF}
-    (SERILB: Type your content here.)
-  
-    \setsansfont[Path=fonts/]{SERILI__.TTF}
-    (SERILI: Type your content here.)
-
-    \setsansfont[Path=fonts/]{SERILBI_.TTF}
-    (SERILBI: Type your content here.)
-
-    Blablabla \textbf{blablabla} \textit{blablabla} \texttt{blablabla}
-
-    \setsansfont[Path=fonts/,
-        BoldFont      =SERILB__.TTF,
-        ItalicFont    =SERILI__.TTF]{SERILRG_.TTF}
-
-    Blablabla \textbf{blablabla} \textit{blablabla} \texttt{blablabla}
-
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \begin{frame}{Introduction}
@@ -155,8 +121,18 @@
 		\end{description}
 	\end{itemize}
   \end{itemize}
-\end{itemize}
-
+  \item Regular \textbf{bold} \textit{italics} \texttt{courier} \textbf{\textit{bold italics}}. 
+  \item Description:
+    \begin{description}
+        \item[Word] This is a nice description
+        \item[Another word] This is another nice description
+    \end{description}
+	\item Enumeration:
+	\begin{enumerate}
+   		\item This is an \alert{alert}
+   		\item This is another \alert{alert}
+	\end{enumerate}
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -172,6 +148,7 @@
 \section{Section 2}
 {
 \sectionheaderSkin %Enclose the frame with {} and add this command for skin background in section header
+\eliminarNavegacion
 \begin{frame}{Section Header 2}{Version - backgroundcolour skin}
 \end{frame}
 }
@@ -206,12 +183,17 @@
 \end{frame}
 }
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Title, subtitle and content}{Enter subtitle here}
 Enter text, charts, pictures, … here
 \end{frame}
 
+{
+\eliminarNavegacion
+\begin{frame}{Title, subtitle and content}{Enter subtitle here}
+Enter text, charts, pictures, … here
+\end{frame}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Figures}
 \begin{frame}{Figures}
