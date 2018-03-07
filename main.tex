@@ -39,7 +39,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Descomentar para habilitar barra de navegación superior
-\ponerNavegacion
+\setNavigation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,9 +75,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Use this block for a blue title slide with modified footline
 {\titlepageBlue
-    \setbeamertemplate{headline}{}
-	\setbeamercolor{frametitle}{bg=black}
-	\setbeamercolor{normal text}{bg=black}
+	% Content
     \begin{frame}
         \titlepage
     \end{frame}
@@ -86,7 +84,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Use this block for a white title slide with modified footline
 {\titlepageWhite
-    \setbeamertemplate{headline}{}
     \begin{frame}
         \titlepage
     \end{frame}
@@ -94,8 +91,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Comment/Uncomment these lines for an automatically generated outline.
-{
-    \setbeamertemplate{headline}{}
+{\disableNavigation{white}
     \begin{frame}{Outline}
         \tableofcontents
     \end{frame}
@@ -147,17 +143,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Section 2}
 {
-\sectionheaderSkin %Enclose the frame with {} and add this command for skin background in section header
-\eliminarNavegacion
-\begin{frame}{Section Header 2}{Version - backgroundcolour skin}
+\sectionheaderGold %Enclose the frame with {} and add this command for skin background in section header
+\begin{frame}{Section Header 2}{Version - backgroundcolour gold}
 \end{frame}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Section 3}
 {
-\sectionheaderGreen %Enclose the frame with {} and add this command for green background in section header
-\begin{frame}{Section Header 3}{Version - backgroundcolour green}
+\sectionheaderGrey %Enclose the frame with {} and add this command for green background in section header
+\begin{frame}{Section Header 3}{Version - backgroundcolour grey}
 \end{frame}
 }
 
@@ -165,6 +160,7 @@
 \section{Content}
 % Slide with black Background
 {\blackSlide %Enclose the frame with {} and add this command for black background in frame
+\disableNavigation{black}
 \begin{frame}{Title and Content - Black}
 \begin{columns}
   \begin{column}{0.3\textwidth}
@@ -189,7 +185,7 @@ Enter text, charts, pictures, … here
 \end{frame}
 
 {
-\eliminarNavegacion
+\disableNavigation{white}
 \begin{frame}{Title, subtitle and content}{Enter subtitle here}
 Enter text, charts, pictures, … here
 \end{frame}

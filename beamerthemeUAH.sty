@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Poner barras de navegación, o no
 %%
-\newcommand{\ponerNavegacion}{
+\newcommand{\setNavigation}{
     \setbeamertemplate{headline}{%
         \begin{beamercolorbox}[ht=2.25ex,dp=3.75ex]{section in head/foot}
             \insertnavigation{\paperwidth}
@@ -37,10 +37,19 @@
     }
 }%
 
-\newcommand{\eliminarNavegacion}{
+\newcommand{\disableNavigation}[1]{
 	\makeatletter
-	\setbeamertemplate{headline}[default]
-	\def\beamer@entrycode{\vspace*{-\headheight}}
+	\setbeamercolor{section in head/foot}{bg=#1, fg=#1}
+	%\setbeamercolor{author in head/foot}{bg=#1, fg=#1}
+	%\setbeamercolor{subsection in head/foot}{bg=#1, fg=#1}
+	%\setbeamercolor{section name in head/foot}{bg=#1, fg=#1}
+	%\setbeamercolor{subsection name in head/foot}{bg=#1, fg=#1}
+	%\setbeamercolor{section in head/foot shaded}{bg=#1, fg=#1}
+	\setbeamercolor{mini frame}{bg=#1, fg=#1}
+	%\setbeamertemplate{headline}[default]
+	%\setbeamertemplate{headline}{}
+	%\def\beamer@entrycode{\vspace*{-\headheight}}
+	%\def\beamer@entrycode{\vspace{-5em}}
 	\makeatother
 }
 
@@ -51,6 +60,19 @@
 \newcommand{\logoDos}{}
 \newcommand{\logoTres}{}
 \newcommand{\logoCuatro}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Format TOC
+%%
+\setbeamerfont{subsection in toc}{size=\small}
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[ball unnumbered]
+
+\setbeamertemplate{section in toc}{%
+  {\color{marronUAH}\inserttocsectionnumber.}~\inserttocsection}
+  \setbeamercolor{subsection in toc}{bg=white,fg=structure}
+  \setbeamertemplate{subsection in toc}{%
+    \hspace{1.2em}{\color{oroUAH}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Create Footline for body slides. To modify content,
@@ -135,6 +157,8 @@
 }
 }
 \newcommand{\titlepageBlue}{ % % This block is for the white background title page
+	%\setbeamercolor{section in head/foot}{bg=azulUAH, fg=azulUAH}
+	\disableNavigation{azulUAH}
 \setbeamertemplate{footline}
   {\hbox{%
     \begin{beamercolorbox}[wd=\paperwidth,ht=7ex,dp=2ex,left]{author in head/foot}%
@@ -178,6 +202,7 @@
 }
 
 \newcommand{\titlepageWhite}{ % % This block is for the white background title page
+\disableNavigation{white}
 \setbeamertemplate{footline}
   {\hbox{%
     \begin{beamercolorbox}[wd=\paperwidth,ht=7ex,dp=2ex,left]{title in head/foot}%
@@ -240,6 +265,7 @@
 
 \newcommand{\sectionheaderWhite}{
  \setbeamercolor{background canvas}{bg=white}
+ \disableNavigation{white}
  \setbeamertemplate{frametitle}{\nointerlineskip
    \begin{beamercolorbox}[sep=0.3cm,ht=7cm,wd=\paperwidth]{white}
         \vbox{}\vskip-2ex
@@ -250,8 +276,9 @@
  }
 }
 
-\newcommand{\sectionheaderSkin}{
+\newcommand{\sectionheaderGold}{
  \setbeamercolor{background canvas}{bg=oroUAH}
+ \disableNavigation{oroUAH}
  \setbeamertemplate{frametitle}{\nointerlineskip
    \begin{beamercolorbox}[sep=0.3cm,ht=7cm,wd=\paperwidth]{oroUAH}
         \vbox{}\vskip-2ex
@@ -262,8 +289,9 @@
  }
 }
 
-\newcommand{\sectionheaderGreen}{
+\newcommand{\sectionheaderGrey}{
  \setbeamercolor{background canvas}{bg=grisUAH}
+ \disableNavigation{grisUAH}
  \setbeamertemplate{frametitle}{\nointerlineskip
    \begin{beamercolorbox}[sep=0.3cm,ht=7cm,wd=\paperwidth]{grisUAH}
         \vbox{}\vskip-2ex
