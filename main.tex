@@ -22,6 +22,7 @@
 \usepackage{fontspec}
 \usepackage{tikz}
 \usepackage{etoolbox}
+\usepackage{listings}
 
 \usetheme{UAH}
 \usecolortheme{UAH}
@@ -301,6 +302,21 @@ Gadgets & 13
 \caption{\label{tab:widgets}An example table.}
 \end{table}
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Source code}
+
+\begin{frame}{Source code}
+    \begin{columns}
+ 	   \column{.50\textwidth}
+	        \begin{block}{Python}
+	        \vspace{-0.2cm}
+		        \lstinputlisting{code/hello.py}
+            \end{block}
+ 	   \column{.50\textwidth}
+		    \lstinputlisting[language=C]{code/hello.c}
+    \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
